@@ -23,12 +23,12 @@
    
 <h1> <span id="p1Display">0</span> to <span id="p2Display">0</span> </h1>
 
-<p>playing to 7</p>
+<p>playing to <span>7</span> </p>
 
 <input type="number" name="" id="">
     <button id="p1"> player one</button>   
     <button id ="p2"> player two</button>   
-    <button id"reset"> player reset </button>   
+    <button id="reset"> player reset </button>   
  
 <script>
 var p1Score = 0;
@@ -37,16 +37,17 @@ var h1 = document.querySelector("h1");
 // console.log(h1);
 var p1Display = document.querySelector("#p1Display");
 var p2Display = document.querySelector("#p2Display");
-
-
-var p1button = document.getElementById("p1");
-
-var p2button = document.getElementById("p2");
-
 var resetButton = document.getElementById("reset");
+var numInput = document.querySelector("input");
+var para = document.querySelector("p");
+var p1button = document.getElementById("p1");
+var p2button = document.getElementById("p2");
+var resetButton = document.getElementById("reset");
+var winningScoreDisplay = document.querySelector(" p span");
+
 
 var gameOver = false;
-var winning = 7;
+var winning = 5;
 
 p1button.addEventListener("click", function(){
   if(!gameOver){
@@ -72,8 +73,24 @@ p2button.addEventListener("click", function(){
   p2Display.textContent = p2Score;
 });
 
+resetButton.addEventListener("click", function(){
+ reset();
+});
 
+function reset(){
+  var p1Score = 0;
+  var p2Score = 0;
+  p1Display.textContent = 0;
+  p2Display.textContent = 0;
+  p1Display.classList.remove("winner");
+  p2Display.classList.remove("winner");
+  gameOver = false;
+}
 
+numInput.addEventListener("change", function(){
+  winningScoreDisplay.textContent = this.value;
+  winningScore = Number(this.value);
+})
 
 
 </script>
