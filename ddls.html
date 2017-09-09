@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<!--   
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2017 by anonymous (http://jsbin.com/ELOKEJU/1/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+  <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<title>JS Bin</title>
+</head>
+<body>
+  <select id="myDynamicSelectBox">
+	  <option value=""><script type="text/javascript">
+						if (localStorage.getItem('mySelectLocalstorageValue') === null) { 
+							localStorage.setItem('mySelectLocalstorageValue', "a");
+							document.write("Option A"); 
+						}
+						else {
+							if (localStorage.getItem('mySelectLocalstorageValue') === "a") { 
+								document.write("Option A"); 
+							} else if (localStorage.getItem('mySelectLocalstorageValue') === "b") { 
+								document.write("Option B"); 
+							} else if (localStorage.getItem('mySelectLocalstorageValue') === "c") { 
+								document.write("Option C"); 
+							} else if (localStorage.getItem('mySelectLocalstorageValue') === "d") { 
+								document.write("Option D"); 
+							} else if (localStorage.getItem('mySelectLocalstorageValue') === "e") { 
+								document.write("Option E"); 
+							}
+						}
+                       </script>
+      </option>
+	  <option value="a">Option A</option>
+	  <option value="b">Option B</option>
+	  <option value="c">Option C</option>
+	  <option value="d">Option D</option>
+	  <option value="e">Option E</option>
+  </select>
+<script>
+$(document).ready(function(){
+    $('#myDynamicSelectBox').change(function(){
+         localStorage.setItem('mySelectLocalstorageValue', $(this).val());
+         $('#myDynamicSelectBox').value(localStorage.getItem('mySelectLocalstorageValue'));
+    });
+});
+</script>

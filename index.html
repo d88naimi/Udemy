@@ -1,0 +1,82 @@
+`<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    </head>
+    <style>
+   .winner{
+     color: green;
+   }
+
+
+    </style>
+   
+   
+   <body>
+   
+<h1> <span id="p1Display">0</span> to <span id="p2Display">0</span> </h1>
+
+<p>playing to 7</p>
+
+<input type="number" name="" id="">
+    <button id="p1"> player one</button>   
+    <button id ="p2"> player two</button>   
+    <button id"reset"> player reset </button>   
+ 
+<script>
+var p1Score = 0;
+var p2Score = 0;
+var h1 = document.querySelector("h1");
+// console.log(h1);
+var p1Display = document.querySelector("#p1Display");
+var p2Display = document.querySelector("#p2Display");
+
+
+var p1button = document.getElementById("p1");
+
+var p2button = document.getElementById("p2");
+
+var resetButton = document.getElementById("reset");
+
+var gameOver = false;
+var winning = 7;
+
+p1button.addEventListener("click", function(){
+  if(!gameOver){
+    p1Score++;
+    if(p1Score === winning){
+      p1Display.classList.add("winner");
+      gameOver = true;
+      alert("you win");
+    }
+  }
+  p1Display.textContent = p1Score;
+});
+
+p2button.addEventListener("click", function(){
+  if(!gameOver){
+    p2Score++;
+    if(p2Score === winning){
+      p2Display.classList.add("winner");
+      gameOver = true;
+      alert("you win");
+    }
+  }
+  p2Display.textContent = p2Score;
+});
+
+
+
+
+
+</script>
+
+    </body>
+</html>
