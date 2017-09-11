@@ -9,7 +9,9 @@ console.log("LINKED!");
 //     "rgb(255, 0, 255)"
 // ]
 
-var colors = generateRandomColors(6);
+var numberSquares = 6;
+
+var colors = generateRandomColors(numberSquares);
 
 var squares = document.querySelectorAll(".square");
 var pickedColor = pickColor();
@@ -20,14 +22,49 @@ var messageDisplay = document.getElementById("message");
 var h1 = document.querySelector("h1");
 var resetButton = document.querySelector("#reset");
 
+var easyBtn = document.querySelector("#easyBtn");
+var hardBtn = document.querySelector("#hardBtn");
+
+
+easyBtn.addEventListener("click", function(){
+    hardBtn.classList.remove("selected");
+    easyBtn.classList.add("selected");
+    numberSquares = 3;
+    colors = generateRandomColors(numberSquares);
+    pickedColor = pickColor();
+    colorDisplay.textContent = pickedColor;
+    for(var i = 0; i < squares.length; i++){
+        if(colors[i]){
+        squares[i].style.backgroundColor = colors[i];
+    } else {
+        squares[i].style.display = "none";
+    }
+   }
+});
+hardBtn.addEventListener("click", function(){
+    easyBtn.classList.remove("selected");
+    hardBtn.classList.add("selected");
+    numberSquares = 6;
+    colors = generateRandomColors( numberSquares);
+    pickedColor = pickColor();
+    colorDisplay.textContent = pickedColor;
+    for(var i = 0; i < squares.length; i++){
+        squares[i].style.backgroundColor = colors[i];
+        squares[i].style.display = "block";
+    
+   }
+});
+
+//reset function button here 
 resetButton.addEventListener("click", function(){
    // generate new colors
-   colors = generateRandomColors(6);
+   colors = generateRandomColors( numberSquares);
    // pick a new random color from array
    pickedColor = pickColor();
 // change colorDisplay to match new picked color
 colorDisplay.textContent = pickedColor;
    //change colors of sqaures
+   messageDisplay.textContent = "";
    for(var i = 0; i< squares.length; i++){
        squares[i].style.backgroundColor = colors[i]; 
    }
@@ -51,7 +88,7 @@ for( var i =0; i < squares.length; i++){
             h1.style.backgroundColor = clickedColor;
         } else {
             this.style.backgroundColor = "#232323"
-            messageDisplay.textContent = "Try again";
+            messageDisplay.textContent = "Try Again";
         }
     });
 }
