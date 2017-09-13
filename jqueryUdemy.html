@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+       
+    <title>testy</title>
+</head>
+<style>
+    body{
+        background: pink;
+    }
+    .correct{
+        color: green;
+
+    }
+    .wrong{
+        color: red;
+        text-align: center;
+    }
+</style>
+
+    <body>
+  <h1>David</h1>
+    <select name="pets" id="">
+    <option value="">cats</option>
+    <option value="">food</option>
+    <option value="">female</option>
+    <option value="">kangarop</option>
+    <option value="">dog</option>
+
+</select>
+<button>puupy</button>                 
+<button>puupy</button>                 
+<button>puupy</button>                 
+<button>puupy</button>                 
+
+    <input type="text" placeholder="your name">
+
+        <li>snickers are my favorite candy i love them</li>
+        <li>twix</li>
+        <li>snickers</li>
+        <li>skittles</li>
+        <li>candy</li>
+</ul>
+
+
+<img src="http://cdn1-www.dogtime.com/assets/uploads/gallery/30-impossibly-cute-puppies/impossibly-cute-puppy-2.jpg" alt="">
+
+<img src="https://www.cesarsway.com/sites/newcesarsway/files/styles/large_article_preview/public/The-stages-of-puppy-growth.jpg?itok=9ptPJwY8" alt="">
+<img src="https://www.cesarsway.com/sites/newcesarsway/files/styles/large_article_preview/public/The-stages-of-puppy-growth.jpg?itok=9ptPJwY8" alt="">
+<img src="https://www.cesarsway.com/sites/newcesarsway/files/styles/large_article_preview/public/The-stages-of-puppy-growth.jpg?itok=9ptPJwY8" alt="">
+<br>
+<div>Div 1</div>
+<div class="highlight">Div 2</div>
+<div id="third">Div 3</div>
+<div class ="highlight">Div 4</div>
+
+   <script>
+        $("div").css("background" , "purple");
+
+        $(".highlight").css("width", "200px");
+        
+        $("#third").css("border", "5px solid orange");
+        
+        $("div:first-of-type").css("color" , "pink");
+
+
+$("h1").addClass("correct");
+// $("li").addClass("wrong");
+// $("li").addClass("correct");
+$("li").toggleClass("wrong");
+
+// jquery best methods 
+
+// click()
+// keypress()
+// on() 
+
+        
+// .addclass()
+// .val()
+// .text
+// .html()   
+//  .removeClass()
+//  .toggleClass()
+
+// exmaple of looping through buttons clicked 
+$("button").click(function(){
+  $(this).css("background", "pink");
+});
+
+
+// $('input[type="text"]') 
+$("input").keypress(function(event){
+if(event.which === 13){
+    alert("you hit enter");
+}
+});
+
+
+$("button").on("click", function(){
+$("img").fadeOut(1000, function(){
+$(this).remove();
+});
+});
+ </script> 
+
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        
+</body>
+</html>
+</html>
